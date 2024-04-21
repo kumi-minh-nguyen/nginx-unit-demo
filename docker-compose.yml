@@ -1,11 +1,10 @@
 version: '3'
 services:
     nginx-unit:
-        image: unit:latest
+        image: nginx/unit
         ports:
             - "88:80"
         volumes:
             - ./demo-app:/demo-app
-            - ./config.json:/demo-app/config.json #curl -X PUT --data-binary @/demo-app/config.json --unix-socket unix:/var/run/control.unit.sock http://localhost/config
-
-
+            - ./config.json:/demo-app/config.json 
+        working_dir: /demo-app

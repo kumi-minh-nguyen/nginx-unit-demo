@@ -1,0 +1,15 @@
+{
+    "listeners": {
+        "*:80": {
+            "pass": "applications/bootdemo"
+        }
+    },
+
+    "applications": {
+        "bootdemo": {
+            "type": "java",
+            "webapp": "/demo-app/build/libs/demo-0.0.1-SNAPSHOT.war",          
+            "working_directory": "/demo-app/"
+        }   
+    }
+}
