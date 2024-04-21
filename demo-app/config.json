@@ -1,16 +1,21 @@
 {
     "listeners": {
-        "*:80": {
+        "*:8080": {
             "pass": "applications/bootdemo"
         }
     },
 
     "applications": {
         "bootdemo": {
+            "user": "unit",
+            "group": "unit",
             "type": "java",
-            "webapp": "~/workspace/nginx-unit-demo/build/libs/demo-0.0.1-SNAPSHOT.war",
-            "working_directory": "~/workspace/nginx-unit-demo/demo/"
-        }
+            "environment": {
+                "Deployment": "0.0.1"
+            },
+            "webapp": "/demo-app/build/libs/demo-0.0.1-SNAPSHOT.war",
+            "working_directory": "/demo-app/",
+            "classpath": []
+        }   
     }
 }
-
