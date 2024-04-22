@@ -3,8 +3,7 @@ services:
     nginx-unit:
         image: nginx/unit
         ports:
-            - "88:80"
+            - "88:8080"
         volumes:
             - ./demo-app:/demo-app
-            - ./config.json:/demo-app/config.json 
-        working_dir: /demo-app
+            - ./config.json:/demo-app/config.json
